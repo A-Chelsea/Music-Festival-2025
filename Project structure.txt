@@ -1,0 +1,48 @@
+Project structure
+CO1101 Coursework 2 - Music Fest 2025 and System Scripts
+Student ID: 259019048
+
+Project Overview
+This submission contains:
+A responsive multi-page, responsive, and interactive website for a "Music Fest 2025".
+Two shell scripts that displays system information and calculate grades, respectively.
+
+Part 1: Web-Development (Music Fest 2025)
+ File Structure
+The website files are organised as follows:
+
+ HTML Files 
+    index.html: The home page featuring a countdown timer.
+     lineup.html: Displays artist profiles using a card layout.
+    schedule.html: A tabular schedule with JavaScript filtering functionality.
+    tickets.html: A booking form with comprehensive JavaScript validation.
+
+CSS
+    style.css: The external stylesheet containing all styles, responsive media queries, and the colour scheme I used.
+
+JavaScript
+    - index.js: Handles the countdown timer on the homepage.
+    - tickets.js: Handles form validation and error messages.
+
+Images:
+    images: Contains artist photos and background image used.
+
+ Features
+- Responsiveness: The layout adapts to mobile devices using CSS Grid and media queries.
+- Interactivity: Hover effects, filtering on the schedule page, and real-time form feedback.
+- Semantic HTML Uses proper tags such as header, nav, main, article, footer.
+
+
+ Part 2: Shell Scripting
+
+Script 1: System Information (`q1-sysinfo.sh`)
+This script displays a dynamic system report including:
+- Current user and date/time.
+- Home and current working directories.
+- A count of files in the current directory.
+
+ Script 2: Grade Calculator (`q2-grade.sh`)
+This script calculates a student's grade based on the number entered (0-100).
+
+
+

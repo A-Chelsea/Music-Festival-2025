@@ -1,0 +1,127 @@
+<!DOCTYPE html> 
+<html lang="en-GB">
+<head>
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 ">
+    <title>Music Fest 2025 - Schedule</title>
+    <link rel="stylesheet" href="/css/style.css">
+     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="hero-section lineup-hero">
+        <nav class="main-nav">
+            <div class="logo">MUSIC FEST 2025</div>
+            <ul class="nav-links">
+                <li><a href="/html/index.html">Home</a></li>
+                <li><a href="/html/lineup.html">Lineup</a></li>
+                <li><a href="schedule.html" class="active">Schedule</a></li>
+                <li><a href="tickets.html" class="btn-ticket-nav"> Buy Tickets</a></li>
+            </ul>
+        </nav>
+
+                <div class="hero-content">
+            <h1>MUSIC FEST SCHEDULE</h1>
+            <p class="theme-desc">Plan your 2-day event. Don't miss out on a performance of a lifetime.</p>   
+        </div>
+    </header>
+
+    <main>
+        <section class="container schedule-section">
+            
+            <div class="schedule-controls">
+                <button class="filter-btn active-btn" onclick="filterSchedule('1')">Day 1 (Friday)</button>
+                <button class="filter-btn" onclick="filterSchedule('2')">Day 2 (Saturday)</button>
+                <button class="filter-btn" onclick="filterSchedule('all')">Full Weekend</button>
+            </div>
+
+            <div class="table-responsive">
+                <table class="schedule-table">
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Artist</th>
+                            <th>Stage</th>
+                            <th>Day</th>
+                        </tr>
+                    </thead>
+                    <tbody id="scheduleBody">
+                        <tr class="schedule-row" data-day="1">
+                            <td class="time-slot">14:00 - 15:00</td>
+                            <td class="artist-name">Opening Set</td>
+                            <td>Main Stage</td>
+                            <td><span class="day-badge day1">Day 1</span></td>
+                        </tr>
+                       <tr class="schedule-row" data-day="1">
+                            <td class="time-slot">16:00 - 17:30</td>
+                            <td class="artist-name">Ayra Starr</td>
+                            <td>Sunset Stage</td>
+                            <td><span class="day-badge day1">Day 1</span></td>
+                        </tr>
+                        <tr class="schedule-row" data-day="1">
+                            <td class="time-slot">18:00 - 19:30</td>
+                            <td class="artist-name">Uncle Waffles</td>
+                            <td>Amapiano Dome</td>
+                            <td><span class="day-badge day1">Day 1</span></td>
+                        </tr>
+                        <tr class="schedule-row" data-day="1">
+                            <td class="time-slot">20:00 - 22:00</td>
+                            <td class="artist-name">Tyla</td>
+                            <td>Main Stage</td>
+                            <td><span class="day-badge day1">Day 1</span></td>
+                        </tr>
+
+                        <tr class="schedule-row" data-day="2">
+                            <td class="time-slot">15:00 - 16:30</td>
+                            <td class="artist-name">Local Talent Showcase</td>
+                            <td>Sunset Stage</td>
+                            <td><span class="day-badge day2">Day 2</span></td>
+                        </tr>
+                        <tr class="schedule-row" data-day="2">
+                            <td class="time-slot">17:00 - 18:30</td>
+                            <td class="artist-name">Asake</td>
+                            <td>Main Stage</td>
+                            <td><span class="day-badge day2">Day 2</span></td>
+                        </tr>
+                        <tr class="schedule-row" data-day="2">
+                            <td class="time-slot">19:00 - 20:30</td>
+                            <td class="artist-name">Rema</td>
+                            <td>Sunset Stage</td>
+                            <td><span class="day-badge day2">Day 2</span></td>
+                        </tr>
+                        <tr class="schedule-row" data-day="2">
+                            <td class="time-slot">21:00 - 23:00</td>
+                            <td class="artist-name">Tems</td>
+                            <td>Main Stage</td>
+                            <td><span class="day-badge day2">Day 2</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="#">Instagram</a> | <a href="#">Twitter</a>
+            <p>&copy;2025 Music Fest. All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        function filterSchedule(day) {
+            // 1. Get all rows
+            const rows = document.querySelectorAll('.schedule-row');
+            
+            // 2. Loop through rows and hide/show based on the 'data-day' attribute
+            rows.forEach(row => {
+                if (day === 'all' || row.getAttribute('data-day') === day) {
+                    row.style.display = ''; // Show
+                } else {
+                    row.style.display = 'none'; // Hide
+                }
+            });
+        }
+    </script>
+</body>
+</html>

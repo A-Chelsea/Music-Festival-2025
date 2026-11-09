@@ -1,0 +1,599 @@
+/*------Home page(index.html) css------*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #4A5D44;
+    font-family: 'Montserrat', sans-serif ;                      /*Apply font globally*/
+
+}
+.main-nav{
+    position: absolute;                                        /*sticks main nav to the top of image */
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;                             /* Logo positioned at the left, Links positioned at the right */
+    align-items: center;
+    padding: 20px 50px;
+    z-index: 10;                                                  /*ensures main nav always sits at the top*/
+
+}
+
+a{
+    color: #ffffff;                                             /*change link text to white*/
+
+
+}
+
+/*styling logo and nav*/
+.Logo{
+    font-weight: 900;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.nav-links{
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a{
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.artist-grid {
+    display: flex;
+    flex-wrap: wrap;                                            /* Allows items to wrap to next line */
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.artist-card {
+    width: 300px;                                                   /* Set width for uniformity */
+    text-align: center;
+}
+
+.artist-card figure {
+    margin: 0;
+}
+
+.artist-card img {
+    width: 100%;
+    height: 300px;                                                /* Set height for uniformity */
+    object-fit: cover;                                            /* Crops image so it doesn't stretch */
+    border-radius: 10px;                                          /* makes Rounded corners */
+    transition: transform 0.3s ease;                               /* Smooth zoom effect */
+}
+
+.artist-card img:hover {
+    transform: scale(1.05);                                         /* Slight zoom owhen cursor hovers over artist cards */
+}
+
+.artist-card figcaption {
+    margin-top: 10px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+.hero-section{
+/*combine image with dark fade effect so that white text pops*/
+background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url(/images/afrobeats-amapiano.png);
+background-size: cover;
+background-position: center;
+min-height: 100vh;                                                   /* sets heigth to fulls screen*/
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+text-align: center;
+color: white;
+}
+
+.btn-main-cta{
+background-color: #ff4500;                                       /*make background colour bright orange */
+color: white;
+padding: 15px 30px;
+text-decoration: none;
+border-radius: 30px;
+font-weight: bold;
+transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-main-cta:hover{
+    transform: scale(1.1);
+    background-color: #ff6a00;
+}
+
+.artist-grid{
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+/*mobile iuse*/
+@media (max-width:768px){
+    .artist-grid{
+        flex-direction: column;        
+        align-items: center;
+    }
+
+    .hero-section h1{
+        font-size: 2rem;                                        /*phones will have smaller text*/
+        
+    }
+
+}
+
+.countdown-container{
+    display: flex;                                               /*align cards in a row*/
+    justify-content: center;                                     /*center cards horizontally*/
+    gap: 30px;                                                  /*space between each card*/
+    margin: 30px 0;                                             /*space above and below each card*/
+    text-align: center;
+}
+
+.time-box{
+    display: flex;
+    flex-direction: column;                                      /*stack the number ontop of the text*/
+    color: #ff4500;
+    line-height: 1;
+}
+.time-number{
+    font-size: 2.5rem;                                          /*Large text for visibility*/
+    font-weight: 900;                                     
+    color: #ff4500;                                          /*Orange colour accent */
+    line-height: 1;
+}
+
+.time-label{
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #ffffff;                                          /*white text to add contrast*/
+    margin-top: 5px;
+}
+
+ /*countdown appearance is smaller on phones*/
+ @media(max-width:760px) {
+    .countdown-container{
+        gap: 15px;
+    }
+    .time-number{
+        font-size: 1.5rem;
+    }
+    .time-label{
+        font-size: 0.7rem;
+    }
+ }
+ 
+ #about{
+    /*creating a vibrant background colour */
+    background: linear-gradient(135deg, #ff4500 0%, #d90429 100%);
+
+    /*create text contrast against vibrant background*/
+    color: #ffffff;
+
+    /*Adding padding to make the hero section eye-catching */
+    padding: 80px 20px;
+
+    /* Center the text for a more focused and bold look*/
+    text-align: center;
+
+    /*Add subtle texts and patterns*/
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);               /*Adds depth so that it sits above white page*/
+    margin-bottom: 40px;                                     /*Adds spacing before headliner section*/
+ }
+
+#about h2{
+    font-family: 'Montserrat', sans-serif;                   /*Implementing bold font*/
+    font-size: 3.5rem;  
+    text-transform:uppercase ;                               /*Uses all caps to make it more impactfull*/    
+    font-weight: 900;                                         /*Make font big*/
+    margin-bottom: 20px;                                      /*Make font bold for contrast*/
+    letter-spacing: 2px;                                      /*spacing letters to look more cinematic*/
+
+    /*Adding solid black shadow to make text pop*/
+    text-shadow: 4px 4px 0px rgba(0,0,0,0.2);
+}
+/*Styling paragraph text*/
+#about p{
+    font-family: 'Montserrat', sans-serif; 
+    font-size: 1.25rem;                                        /*Making it larger than standard 16px textso it appears more bold*/
+    line-height: 1.6;                                          /*Improve readability*/
+    max-width: 800px;                                          /*Prevent text from stretching across the whole screen*/
+    margin: 0 auto;                                           /*Centers text block*/
+    font-weight: 500;
+}
+
+  /*Improve responsiveness on mobile phones*/
+  @media(max-width: 768px){
+  #about h2{
+    font-size: 2.5rem;                                          /*Makes font slightly smaller on phones*/
+  }
+}
+
+#lineup-preview h2{
+
+    text-align: center;                                          /*move h2 text to the middle*/           
+    font-family: 'Montserrat', sans-serif;       
+    font-size: 3.5rem;                                           /*make font size match about section */ 
+    text-transform:uppercase ;                                   /*Using all caps to make it more impactfull*/    
+    font-weight: 900;                                            /*Make font really bold*/
+    margin-bottom: 20px;                                         /*adds space between title and images*/ 
+
+    text-decoration: underline;
+    text-decoration-color: #000000;                           /* Make the line white  */
+    text-decoration-thickness: 5px;                             /* Makes the line bold */
+    text-underline-offset: 15px;                                /* Pushes the line down away from the text */
+                     
+
+}
+
+
+
+/*------Lineup page css-----*/
+/*Hero adjustment*/
+.lineup-hero{
+    min-height: 50vh;                                            /*Makes header shorter to show artists sooner*/
+}
+
+/*Lineup card design*/
+.lineup-card{
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    overflow: hidden;                                           /*Ensures imgage corners stay rounded*/
+    width: 300px;                                               /*Widen to fit frame*/
+    border: 1px solid #333;                                   /*makes border subtle*/
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+/*Hover effect*/
+.lineup-card:hover {
+    transform: scale(1.02);
+    border-color:#ff4500;                                     /*orange glow on border when hovered*/
+}
+
+ /*Image handling*/
+ .lineup-card figure {
+    margin: 0;
+    height: 300px;
+    overflow: hidden;
+ }
+
+ .lineup-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+ }
+
+ .lineup-card:hover img{
+    transform: scale(1.1);
+ }
+
+
+  /*Card text content */
+  .card-content {
+    padding: 20px;
+    text-align: center;                                           /*Aligns text in the center for easier reading*/
+  }
+
+  .card-content h3 {
+    font-family: 'Montserrat', sans-serif; 
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+   /*Genre Badge*/
+  .genre-badge {
+    display: inline-block;
+    background-color: #ff4500;
+    color: white;
+    font-size: 0.8rem;
+    padding: 5px 15px;
+    border-radius: 30px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+ /*Artist Bio*/
+ .artist-bio {
+    font-family: 'Montserrat', sans-serif; 
+    font-size: 0.9rem;
+    color: #cccccc;
+    line-height: 1.5;
+    font-weight: 400;
+ }
+
+ /*Adjustment for mobile responsiveness*/
+ @media (max-width: 768px) {
+    .lineup-card{
+         width: 100%;                                                /*Ensures its full width on mobile*/
+        max-width: 350px;
+    }
+
+ }
+
+
+
+
+ /*-------Tickets Page css-------*/
+
+ /*Center the form section*/
+.form-section {
+    display: flex;
+    justify-content: center;
+    padding: 50px 20px;
+}
+
+ /*The card container design implmentation*/
+ .ticket-card {
+    background-color: #1a1a1a;
+    padding: 40px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    border: 1px solid #333;
+ }
+
+ .ticket-card h2{
+    color: white;
+    font-family: 'Montserrat', sans-serif; 
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 2rem;
+ }
+
+.form-instruction {
+    color: #cccccc;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 0.9rem;
+}
+
+/* Form Groups */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    color: #ffffff;
+    margin-bottom: 8px;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+/* Input Fields Styling - The 'Premium'  */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #444;
+    background-color: #333;                                          /* Dark input background */
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+/* Focus Effect - Matches  orange buttons */
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #ff4500;                                           
+}
+
+/* Row Layout for Ticket Type and Quantity */
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+.form-row .form-group {
+    flex: 1;                                                            /* Makes them share equal width */
+}
+
+/* Checkbox Styling */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.checkbox-group input {
+    width: auto;                                                          /* Prevents checkbox from stretching */
+    cursor: pointer;
+}
+.checkbox-group a {
+    color: #ff4500;
+    text-decoration: underline;
+}
+
+/* Buttons */
+.form-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.submit-btn {
+    border: none;
+    cursor: pointer;
+    flex: 2;                                                                  /* Submit button takes more space */
+    font-size: 1rem;
+}
+
+.btn-reset {
+    background-color: transparent;
+    border: 2px solid #ff4500;
+    color: #ff4500;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    flex: 1;
+    transition: all 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.btn-reset:hover {
+    background-color: rgba(255, 69, 0, 0.1);
+    color: white;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+    .form-row {
+        flex-direction: column;                                                /* Stack inputs on small screens */
+        gap: 0;
+    }
+    .ticket-card {
+        padding: 20px;
+    }
+}
+
+
+
+
+
+
+/*-------Schedule Page css-------*/
+.schedule-section{
+    padding: 50px 20px;
+    text-align: center;
+}
+
+/* Filter buttons*/
+.schedule-controls{
+    margin-bottom: 30px;
+}
+.filter-btn {
+    background-color: transparent;
+    border: 2px solid #ff4500;
+    color: white;
+    padding: 10px 25px;
+    margin: 0 10px;
+    border-radius: 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem
+}
+
+.filter-btn:hover,
+.filter-btn:focus {
+    background-color: #ff4500;
+    color: white;
+}
+
+/*Table design*/
+.table-rsponsive {
+    overflow-x: auto;                             /*allows user to scroll side ways on mobile devices*/
+}
+
+.schedule-table {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    border-collapse: collapse;                                   /*removes gaps bewteen cells*/
+    background-color: #1a1a1a;                 ,              /*gives card a dark background*/
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.schedule-table th,
+.schedule-table td {
+    padding: 20px;
+    text-align: left;
+    border-bottom: 1 px solid #333;
+    font-family: 'Montserrat', sans-serif;
+    color: #cccccc
+}
+
+/*Header Styling*/
+.schedule-table th {
+    background-color: #ff4500;                               /*makes rschefdule table orange to match other pages*/
+    color: white;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 1.1rem;
+}
+
+/*Row design*/
+.schedule-table tr:last-child td{       
+    border-bottom: none;                                    /*removes borders frombottom row to make ui look cleaner */
+}
+
+.schedule-table tr:hover {  
+    background-color: #2a2a2a;                           /*elements turns orange when you hover over them*/
+}
+
+/*Highlights artists name*/
+.artist-name {
+    color:white !important; 
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+.time-slot {
+    font-weight: bold;
+    color: #ff4500 !important;                            /* makes Time oramge  */
+}
+
+/* Day Badges */
+.day-badge {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+}
+
+.day1 {
+    background-color: #2e8b57;                           /* Green for Day 1 */
+}
+
+.day2 {
+    background-color: #4169e1;                            /* Blue for Day 2 */
+}
+
+/* Mobile Adjustments */
+@media (max-width: 600px) {
+    .filter-btn {
+        margin-bottom: 10px;
+        width: 100%;                                     /* Stack buttons on phone to make it user friendly*/
+    }
+    
+    .schedule-table th, 
+    .schedule-table td {
+        padding: 12px;                                 /* Less padding on small screens */
+        font-size: 0.9rem;
+    }
+}
+
+
