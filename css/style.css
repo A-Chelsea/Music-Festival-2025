@@ -87,7 +87,7 @@ a{
 
 .hero-section{
 /*combine image with dark fade effect so that white text pops*/
-background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url(/images/afrobeats-amapiano.png);
+background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url(../images/afrobeats-amapiano.png);
 background-size: cover;
 background-position: center;
 min-height: 100vh;                                                   /* sets heigth to fulls screen*/
@@ -511,7 +511,7 @@ textarea:focus {
 }
 
 /*Table design*/
-.table-rsponsive {
+.table-responsive {
     overflow-x: auto;                             /*allows user to scroll side ways on mobile devices*/
 }
 
